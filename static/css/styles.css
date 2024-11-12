@@ -1,0 +1,88 @@
+/* Resetando margens e padding para evitar comportamentos inesperados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo uma cor de fundo e a fonte padrão */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Preenche toda a altura da tela */
+    text-align: center;
+}
+
+/* Estilizando o container principal para centralizar o conteúdo */
+.container {
+    width: 90%;
+    max-width: 600px; /* Limite para telas grandes */
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Adicionando espaçamento vertical entre h1, h2, p, ul e select */
+h1, h2, p, ul, select {
+    margin-bottom: 20px; /* Espaçamento de 20px abaixo de cada elemento */
+}
+
+/* Estilo para os botões */
+button {
+    background-color: #4CAF50; /* Cor do botão */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Estilizando listas para centralizar marcadores e texto */
+ul {
+    list-style-position: inside; /* Mantém os marcadores dentro da área de texto */
+    text-align: center; /* Centraliza o texto */
+    padding-left: 0; /* Remove o recuo padrão da lista */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+li {
+    display: inline-block; /* Faz com que cada item da lista ocupe o mínimo espaço necessário */
+}
+
+/* Responsividade: ajusta os elementos para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        padding: 20px; /* Ajuste de espaçamento em dispositivos móveis */
+    }
+
+    .container {
+        width: 100%; /* Faz com que o container ocupe toda a tela em dispositivos móveis */
+        padding: 15px;
+    }
+
+    button {
+        width: 100%; /* Botão ocupa toda a largura da tela em dispositivos móveis */
+        font-size: 18px;
+    }
+
+    ul {
+        align-items: flex-start; /* Centraliza os itens ao início da lista em telas menores, se preferir */
+    }
+}

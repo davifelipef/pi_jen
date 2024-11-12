@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Controle de Estoque</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Estoque</h1>
+        <p>Estoque Atual:</p>
+        <ul>
+            {% for item, quantidade in estoque.items() %}
+            <li>{{ item }}: {{ quantidade }} unidades</li>
+            {% endfor %}
+        </ul>
+        <h2>Fazer Locação</h2>
+        <form action="/locacao" method="POST">
+            <label for="item">Escolha um item para locação:</label>
+            <select name="item" id="item">
+                {% for item in estoque %}
+                <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Alugar</button>
+        </form>
+    </div>
+</body>
+</html>
+
+    
